@@ -11,9 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".RegisterOfficerActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".FarmerActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".FarmerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
