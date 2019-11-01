@@ -4,27 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/myrect"
     tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="Login"
+        android:fontFamily="serif"
+        android:textAlignment="center"
+        android:textColor="#FFFF"
+        android:textSize="20dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.401"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot Password?"
+        android:fontFamily="serif"
 
+        android:textColor="#FFFF"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.628"
@@ -37,7 +46,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" Don't have account? Register  "
+        android:fontFamily="serif"
 
+        android:textColor="#FFFF"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.429"
@@ -46,12 +58,16 @@
         app:layout_constraintVertical_bias="0.91" />
 
     <EditText
-        android:id="@+id/editTextpassword"
+        android:id="@+id/editTextMobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Mobile"
+        android:fontFamily="serif"
+
+        android:textColor="#FFFF"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
@@ -60,12 +76,16 @@
         app:layout_constraintVertical_bias="0.425" />
 
     <EditText
-        android:id="@+id/editTextpassword"
+        android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+
         android:text="Password"
+        android:fontFamily="serif"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="#FFFF"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.439"
@@ -85,6 +105,10 @@
         android:background="#2196F3"
         android:clickable="true"
         android:text="Login"
+        android:fontFamily="serif"
+
+        android:textColor="#FFFF"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.43"
