@@ -12,8 +12,8 @@
         <activity android:name=".RegisterOfficerActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".FarmerActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity"><!--RegisterActivity-FarmerActivity-LoginActivity-RegisterOfficerActivity-MainActivity-->
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity"><!--RegisterActivity-FarmerActivity-LoginActivity-RegisterOfficerActivity-MainActivity-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
