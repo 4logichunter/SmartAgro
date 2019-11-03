@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name" translatable="false">Smart Agro</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps">Location Map</string>
 </resources>
