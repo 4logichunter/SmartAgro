@@ -29,7 +29,7 @@ private  int userType;
         switch (v.getId()) {
             case R.id.btnFarmer:
                 userType=1;
-                Intent intent = new Intent(this, FarmerActivity.class);
+                Intent intent = new Intent(this, LoginActivity.class);
 
                 intent.putExtra(EXTRA_MESSAGE, userType);
                 startActivity(intent);

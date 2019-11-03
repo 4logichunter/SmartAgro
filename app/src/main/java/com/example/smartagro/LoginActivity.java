@@ -2,6 +2,7 @@ package com.example.smartagro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -19,18 +20,24 @@ import retrofit2.Response;
 
 
 
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText editTextmobileNo, editTextpassword, editTextname, editTextuserType;
-
+    String userType="1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Intent intent = getIntent();
+        userType = intent.getStringExtra("EXTRA_MESSAGE");
+
+
         editTextmobileNo = findViewById(R.id.editTextMobile);
         editTextpassword = findViewById(R.id.editTextPassword);
         editTextname = findViewById(R.id.editTextName);
         findViewById(R.id.btnLogin).setOnClickListener(this);
-        findViewById(R.id.textView9).setOnClickListener(this);
+        findViewById(R.id.txtviewRegister).setOnClickListener(this);
 
 
     }
@@ -39,12 +46,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String email = editTextmobileNo.getText().toString().trim();
         String password = editTextpassword.getText().toString().trim();
         String name = "test";
-        int userType = 1;
+
 
         Call<ResponseBody> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .createUser(email, password, name, userType);
+                .createUser(email, password, name, 1);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -73,7 +80,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 case R.id.btnLogin:
                     userSignUp();
                     break;
-                case R.id.textView9:
+                case R.id.txtviewRegister:
+
+                    Intent intent = new Intent(this, RegisterActivity.class);
+                    intent.putExtra("EXTRA_MESSAGE", userType);
+                    startActivity(intent);
                     break;
             }
 
