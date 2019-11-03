@@ -33,7 +33,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.614"
-        app:srcCompat="@drawable/report" />
+        app:srcCompat="@drawable/report" /><![CDATA[
+
+    "
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.696" />
+
+    ]]>
 
     <TextView
         android:id="@+id/textView15"
@@ -42,14 +53,9 @@
         android:fontFamily="serif"
         android:text="View"
         android:textAlignment="center"
-        android:textColor="#FFFF"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        android:textColor="@color/colorPrimaryDark2"
+        tools:layout_editor_absoluteX="293dp"
+        tools:layout_editor_absoluteY="483dp" />
 
     <ImageButton
         android:id="@+id/imageButton9"
@@ -63,16 +69,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.618"
-        app:srcCompat="@drawable/synchronize" />
+        app:srcCompat="@drawable/synchronize" /><![CDATA[
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="Synchronize"
-        android:textAlignment="center"
-        android:textColor="#FFFF"
+    "
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,6 +80,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.701" />
 
+
+
+
+
+    ]]>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Synchronize"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark2"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="486dp" />
+
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
@@ -88,7 +104,7 @@
         android:fontFamily="serif"
         android:text="Result"
         android:textAlignment="center"
-        android:textColor="#FFFF"
+        android:textColor="@color/colorPrimaryDark2"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +134,7 @@
         android:fontFamily="serif"
         android:text="Push Data"
         android:textAlignment="center"
-        android:textColor="#FFFF"
+        android:textColor="@color/colorPrimaryDark2"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
