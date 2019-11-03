@@ -22,7 +22,18 @@ import retrofit2.http.POST;
                 @Field("name") String name,
                 @Field("userType") int userType
         );
-        @FormUrlEncoded
+        /*@FormUrlEncoded
         @GET("Division")
+        Call<List<Division>> getDivision();*/
+
+        @GET("posts")
         Call<List<Division>> getDivision();
+
+
+        /*@PUT("update/{id}")
+        Call<User> updateUser(@Path("id") int id, @Body User user);
+
+        @DELETE("delete/{id}")
+        Call<User> deleteUser(@Path("id") int id);*/
+
     }
