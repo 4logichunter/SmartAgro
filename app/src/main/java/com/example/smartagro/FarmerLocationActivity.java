@@ -39,42 +39,39 @@ public class FarmerLocationActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinnerDivison);
 
 
-        btnGetDivisionList = (Button) findViewById(R.id.btnGetDivison);
+        btnGetDivisionList = findViewById(R.id.btnGetDivison);
 
 
         btnGetDivisionList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                getUsersList();
+                getDivisonList();
             }
         });
 
     }
 
-    public void getUsersList() {
+    public void getDivisonList() {
         Call<List<Division>> call = RetrofitClient
                 .getInstance()
                 .getApi().getDivision();
-        // Call<List<Division>> call = userService.getDivision();
+
+
+
         call.enqueue(new Callback<List<Division>>() {
             @Override
             public void onResponse(Call<List<Division>> call, Response<List<Division>> response) {
 
+               // Toast.makeText(getApplication().getApplicationContext(),"sdfsdf",Toast.LENGTH_LONG);
+
+boolean mo=response.isSuccessful();
+                String asd="sfdsf";
+
                 if (response.isSuccessful()) {
                     list = response.body();
 
-                    posts = response.body();
 
-                    for (Division post : posts) {
-                        String content = "";
-                        content += "ID: " + post.getId() + "\n";
-                        content += "User ID: " + post.getUserId() + "\n";
-                        content += "Title: " + post.getTitle() + "\n";
-                        content += "Text: " + post.getText() + "\n\n";
-
-                        //textViewResult.append(content);
-                    }
                 }
             }
 

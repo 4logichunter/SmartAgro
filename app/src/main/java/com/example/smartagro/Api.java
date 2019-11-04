@@ -26,7 +26,7 @@ import retrofit2.http.POST;
         @GET("Division")
         Call<List<Division>> getDivision();*/
 
-        @GET("posts")
+        @GET("Division")
         Call<List<Division>> getDivision();
 
 
