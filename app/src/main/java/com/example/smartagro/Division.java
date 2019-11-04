@@ -7,6 +7,9 @@ public class Division {
     @SerializedName("divisionCode")
     @Expose
     private int divisionCode;
+    @SerializedName("divisionName")
+    @Expose
+    private String divisionName;
 
     public void setDivisionCode(int divisionCode) {
         this.divisionCode = divisionCode;
@@ -16,9 +19,7 @@ public class Division {
         this.divisionName = divisionName;
     }
 
-    @SerializedName("divisionName")
-    @Expose
-    private String divisionName;
+
 
     public int getDivisionCode() {
         return divisionCode;
