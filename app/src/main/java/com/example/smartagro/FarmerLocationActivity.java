@@ -3,6 +3,7 @@ package com.example.smartagro;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,11 +43,14 @@ import retrofit2.Response;
 public class FarmerLocationActivity extends AppCompatActivity {
 
     Button btnGetDivisionList;
+    Button btnRegister;
     List<Zila> listZila = new ArrayList<Zila>();
     List<Paurasava> listPaurasava = new ArrayList<Paurasava>();
     List<Union> listUnion = new ArrayList<Union>();
     List<Upazila> listUpazila = new ArrayList<Upazila>();
-    private Spinner spinnerDivison;
+
+
+
 
     //Api userService;
     List<Division> listDivision = new ArrayList<Division>();
@@ -54,13 +58,35 @@ public class FarmerLocationActivity extends AppCompatActivity {
     private Spinner spinnerPaurasava ;
     private Spinner spinnerUnion ;
     private Spinner spinnerUpazila;
+    private Spinner spinnerDivison;
 
     private TextView txtView;
+    private String userType;
+    private String userName;
+    private String userMobile;
+    private String userAddress;
+    private String userPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_farmer_location);
+
+
+        Bundle extras = getIntent().getExtras();
+        // Extract the array from the Bundle object
+        String[] myArr= extras.getStringArray("EXTRA_MESSAGE");
+        // Output the array
+        if (myArr.length>0)
+        {
+            userType = myArr[0].toString();
+            userName = myArr[1].toString();
+            userMobile = myArr[4].toString();
+            userAddress=myArr[3].toString();
+        userPassword= myArr[2].toString();
+        }
+
+
 
         spinnerDivison = findViewById(R.id.spinnerDivison);
         spinnerZila=findViewById(R.id.spinnerZila);
@@ -70,6 +96,26 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
         btnGetDivisionList = findViewById(R.id.btnGetDivison);
         txtView=findViewById(R.id.textViewNext2);
+        btnRegister=findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Division division= (Division) spinnerDivison.getSelectedItem();
+                Upazila upazila= (Upazila) spinnerUpazila.getSelectedItem();
+                Zila zila= (Zila) spinnerZila.getSelectedItem();
+                Union union= (Union) spinnerUnion.getSelectedItem();
+                Paurasava paurasava= (Paurasava ) spinnerPaurasava.getSelectedItem();
+                int strDivision= division.getDivisionCode();
+                int strUpazila= upazila.getUpazilaCode();
+                int strZila= zila.getZilaCode();
+                int strUnion= union.getUnionCode();
+                int strPaurasava= paurasava.getPaurasavaCode();
+
+
+
+            }
+        });
 
         LoadDivision loadDivision=new LoadDivision();
         loadDivision.execute();
@@ -598,5 +644,64 @@ public class FarmerLocationActivity extends AppCompatActivity {
     }
     /*-----------------------------Show Upazila(End)----------------------*/
     ///////////////////////////////////////////////////////////////////////
+
+
+/*Data parsing method*/
+
+    public class SendData extends AsyncTask<String[] ,Void ,Void>
+    {
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
+
+        @Override
+        protected Void doInBackground(String[]... strings) {
+            String userType=strings[0].toString();
+            String userMobile=strings[1].toString();
+            String userName=strings[2].toString();
+            String userAddress=strings[3].toString();
+            String userPassword=strings[4].toString();
+            String userUpozila=strings[5].toString();
+            String userZila=strings[6].toString();
+            String userDivision=strings[7].toString();
+            String userPaurashova=  strings[8].toString();
+            String userUnion=  strings[9].toString();
+
+
+            JSONObject jObject;
+            JSONArray jsonArray = null;
+            int i = 0;
+
+            String str = "http://202.126.122.85:71/api/FarmerRegestration" ;//"http://202.126.122.85:71/api/Division";
+            String response = "";
+
+            URL url = null;
+            try {
+                url = new URL(str);
+            } catch (MalformedURLException e) {
+                response = e.getMessage();
+            } catch (Exception ex) {
+                response = ex.getMessage();
+            }
+            HttpURLConnection conn = null;
+
+            JSONObject jsonObject;
+            JSONStringer userJson = null;
+            OutputStreamWriter outputStreamWriter = null;
+            int responseCode;
+            BufferedReader br;
+            String line;
+            try {
+                conn = (HttpURLConnection) url.openConnection();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+
 }
 
