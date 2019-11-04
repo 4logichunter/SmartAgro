@@ -1,5 +1,7 @@
 package com.example.smartagro;
 
+import androidx.annotation.NonNull;
+
 public class Union {
     public  int UnionCode;
     public String UnionName;
@@ -18,5 +20,11 @@ public class Union {
 
     public void setUnionName(String unionName) {
         UnionName = unionName;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return UnionName;
     }
 }

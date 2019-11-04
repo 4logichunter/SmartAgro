@@ -1,5 +1,7 @@
 package com.example.smartagro;
 
+import androidx.annotation.NonNull;
+
 public class Upazila {
 
     public  int UpazilaCode;
@@ -19,5 +21,11 @@ public class Upazila {
 
     public void setUpazilaName(String upazilaName) {
         UpazilaName = upazilaName;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return UpazilaName;
     }
 }

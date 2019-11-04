@@ -1,5 +1,7 @@
 package com.example.smartagro;
 
+import androidx.annotation.NonNull;
+
 public class Paurasava {
 
 
@@ -20,5 +22,11 @@ public class Paurasava {
 
     public void setPaurasavaName(String paurasavaName) {
         PaurasavaName = paurasavaName;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return PaurasavaName;
     }
 }

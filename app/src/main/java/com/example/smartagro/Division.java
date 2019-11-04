@@ -1,6 +1,8 @@
 package com.example.smartagro;
 
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 public class Division {
@@ -26,6 +28,12 @@ public class Division {
     }
 
     public String getDivisionName() {
+        return divisionName;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
         return divisionName;
     }
 }

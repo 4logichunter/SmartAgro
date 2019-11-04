@@ -86,10 +86,12 @@ public class FarmerLocationActivity extends AppCompatActivity {
         LoadUpazila loadUpazila=new LoadUpazila();
         loadUpazila.execute();
 
+
+
     }
     ///////////////////////////////////////////////////////////////////////
     /*-----------------------------Show Division(Start)----------------------*/
-    public void ShowMyText(ArrayList<Division> s)
+    public void ShowDivision(ArrayList<Division> s)
     {
         ArrayAdapter<Division> spinnerArrayAdapter = new ArrayAdapter<Division>
                 (this, android.R.layout.simple_spinner_item,
@@ -97,6 +99,8 @@ public class FarmerLocationActivity extends AppCompatActivity {
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout
                 .simple_spinner_dropdown_item);
         spinnerDivison.setAdapter(spinnerArrayAdapter);
+
+
     }
 
     /*-----------------------------Show Division(End)----------------------*/
@@ -147,7 +151,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(ArrayList<Division> divisionArrayList) {
             super.onPostExecute(divisionArrayList);
-            FarmerLocationActivity.this.ShowMyText(divisionArrayList);
+            FarmerLocationActivity.this.ShowDivision(divisionArrayList);
         }
 
         @Override
