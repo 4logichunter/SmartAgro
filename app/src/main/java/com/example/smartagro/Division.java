@@ -1,13 +1,15 @@
 package com.example.smartagro;
 
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 public class Division {
     @SerializedName("divisionCode")
+    @Expose
     private int divisionCode;
 
     @SerializedName("divisionName")
-
+    @Expose
     private String divisionName;
 
     public int getDivisionCode() {

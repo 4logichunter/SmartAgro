@@ -31,8 +31,8 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
 
     //Api userService;
-    List<Division> list = new ArrayList<Division>();
-
+    List<Division> listDivision = new ArrayList<Division>();
+    List<Division> listDivision1 = new ArrayList<Division>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,24 +43,37 @@ public class FarmerLocationActivity extends AppCompatActivity {
         btnGetDivisionList = findViewById(R.id.btnGetDivison);
 
          getUsersList();
+         String str="fsdaf";
+         LoadSpinner();
 
-       /* Spinner s = (Spinner) findViewById(R.id.spinnerDivison);
+
+        /*Spinner s = (Spinner) findViewById(R.id.spinnerDivison);
         ArrayAdapter<Division> adapter = new ArrayAdapter<Division>(this,
-                android.R.layout.simple_spinner_item, posts);
+                android.R.layout.simple_spinner_item, listDivision);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s.setAdapter(adapter);*/
 
 
-        /*btnGetDivisionList.setOnClickListener(new View.OnClickListener() {
+        btnGetDivisionList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                getUsersList();
+              //getUsersList();
+
+
             }
-        });*/
+        });
 
     }
+public  void LoadSpinner()
+{
+     Spinner s = findViewById(R.id.spinnerDivison);
+        ArrayAdapter<Division> adapter = new ArrayAdapter<Division>(this,
+                android.R.layout.simple_spinner_item, listDivision);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s.setAdapter(adapter);
 
+}
     public  void getUsersList() {
         Call<List<Division>> call = RetrofitClient
                 .getInstance()
@@ -71,19 +84,9 @@ public class FarmerLocationActivity extends AppCompatActivity {
             public void onResponse(Call<List<Division>> call, Response<List<Division>> response) {
 
                 if (response.isSuccessful()) {
-                    list = response.body();
+                    listDivision = response.body();
 
-                    posts = response.body();
 
-                    /*for (Division post : posts) {
-                        String content = "";
-                        content += "ID: " + post.getId() + "\n";
-                        content += "User ID: " + post.getUserId() + "\n";
-                        content += "Title: " + post.getTitle() + "\n";
-                        content += "Text: " + post.getText() + "\n\n";
-
-                        //textViewResult.append(content);
-                    }*/
                 }
             }
 
