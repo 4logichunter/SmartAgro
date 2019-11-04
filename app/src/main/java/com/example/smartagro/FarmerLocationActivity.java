@@ -31,7 +31,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
 
     //Api userService;
-    List<Division> list = new ArrayList<Division>();
+    List<Division> listDivision = new ArrayList<Division>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
         btnGetDivisionList = findViewById(R.id.btnGetDivison);
 
-        getUsersList();
+       // getUsersList();
 
        /* Spinner s = (Spinner) findViewById(R.id.spinnerDivison);
         ArrayAdapter<Division> adapter = new ArrayAdapter<Division>(this,
@@ -51,17 +51,27 @@ public class FarmerLocationActivity extends AppCompatActivity {
         s.setAdapter(adapter);*/
 
 
-        /*btnGetDivisionList.setOnClickListener(new View.OnClickListener() {
+        btnGetDivisionList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                getUsersList();
+                List<Division> listDivision1=     getUsersList();
+
+
+String m="sdf";
+
+          //      Spinner s = (Spinner) findViewById(R.id.spinnerDivison);
+                /*ArrayAdapter<Division> adapter = new ArrayAdapter<Division>(this,
+                        android.R.layout.simple_spinner_item, listDivision);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                s.setAdapter(adapter);*/
+
             }
-        });*/
+        });
 
     }
 
-    public void getUsersList() {
+    public  List<Division> getUsersList() {
         Call<List<Division>> call = RetrofitClient
                 .getInstance()
                 .getApi().getDivision();
@@ -71,19 +81,10 @@ public class FarmerLocationActivity extends AppCompatActivity {
             public void onResponse(Call<List<Division>> call, Response<List<Division>> response) {
 
                 if (response.isSuccessful()) {
-                    list = response.body();
+                    listDivision = response.body();
 
-                    posts = response.body();
 
-                    /*for (Division post : posts) {
-                        String content = "";
-                        content += "ID: " + post.getId() + "\n";
-                        content += "User ID: " + post.getUserId() + "\n";
-                        content += "Title: " + post.getTitle() + "\n";
-                        content += "Text: " + post.getText() + "\n\n";
 
-                        //textViewResult.append(content);
-                    }*/
                 }
             }
 
@@ -93,6 +94,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
                 Log.e("ERROR: ", t.getMessage());
             }
         });
+        return listDivision;
     }
 
 
