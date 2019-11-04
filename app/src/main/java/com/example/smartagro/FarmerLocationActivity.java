@@ -42,7 +42,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
         btnGetDivisionList = findViewById(R.id.btnGetDivison);
 
-        getUsersList();
+         getUsersList();
 
        /* Spinner s = (Spinner) findViewById(R.id.spinnerDivison);
         ArrayAdapter<Division> adapter = new ArrayAdapter<Division>(this,
@@ -61,7 +61,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
     }
 
-    public void getUsersList() {
+    public  void getUsersList() {
         Call<List<Division>> call = RetrofitClient
                 .getInstance()
                 .getApi().getDivision();
@@ -93,6 +93,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
                 Log.e("ERROR: ", t.getMessage());
             }
         });
+
     }
 
 

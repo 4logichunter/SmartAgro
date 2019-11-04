@@ -3,7 +3,7 @@ package com.example.smartagro;
 
 import com.google.gson.annotations.SerializedName;
 public class Division {
-
+    @SerializedName("divisionCode")
     private int divisionCode;
 
     @SerializedName("divisionName")
