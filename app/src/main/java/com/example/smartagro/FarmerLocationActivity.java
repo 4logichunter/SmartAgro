@@ -28,6 +28,7 @@ import retrofit2.Callback;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -669,6 +670,19 @@ public class FarmerLocationActivity extends AppCompatActivity {
             String userPaurashova=  strings[8].toString();
             String userUnion=  strings[9].toString();
 
+            FarmerViewModel farmerViewModel=new FarmerViewModel();
+            farmerViewModel.user.mobileNo=userMobile;
+            farmerViewModel.user.name=userName;
+            farmerViewModel.user.userType=1;
+            farmerViewModel.user.password="123";
+            farmerViewModel.userAdditionalInfo.address=userAddress;
+            farmerViewModel.userAdditionalInfo.mobile_no = userMobile;
+            farmerViewModel.userAdditionalInfo.division_code=Integer.parseInt(userDivision) ;
+            farmerViewModel.userAdditionalInfo.zila_code=Integer.parseInt(userZila) ;
+            farmerViewModel.userAdditionalInfo.paurasava_code=Integer.parseInt(userPaurashova) ;
+            farmerViewModel.userAdditionalInfo.union_code=Integer.parseInt(userUnion) ;
+            farmerViewModel.userAdditionalInfo.upazila_code=Integer.parseInt(userUpozila) ;
+
 
             JSONObject jObject;
             JSONArray jsonArray = null;
@@ -689,16 +703,38 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
             JSONObject jsonObject;
             JSONStringer userJson = null;
-            OutputStreamWriter outputStreamWriter = null;
+            ObjectOutputStream objout=null;
             int responseCode;
             BufferedReader br;
             String line;
+            conn.setDoInput(true);
             try {
                 conn = (HttpURLConnection) url.openConnection();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            try {
+                conn.setRequestMethod("POST");
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            }
 
+            try {
+                objout = new ObjectOutputStream(conn.getOutputStream());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                User user=new User();
+                objout.writeObject(farmerViewModel);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                objout.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             return null;
         }
     }
