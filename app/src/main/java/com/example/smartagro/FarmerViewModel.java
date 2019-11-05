@@ -1,6 +1,8 @@
 package com.example.smartagro;
 
-public class ViewModel {
+import java.io.Serializable;
+
+public class FarmerViewModel implements Serializable {
 
     public User user ;
     public  UserAdditionalInfo userAdditionalInfo ;

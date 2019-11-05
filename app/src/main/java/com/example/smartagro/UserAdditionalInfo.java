@@ -1,6 +1,8 @@
 package com.example.smartagro;
 
-public class UserAdditionalInfo {
+import java.io.Serializable;
+
+public class UserAdditionalInfo implements Serializable {
 
     public int id  ;
     public String   mobile_no;

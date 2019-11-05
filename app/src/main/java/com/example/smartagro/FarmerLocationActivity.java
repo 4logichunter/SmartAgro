@@ -25,9 +25,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -112,7 +115,22 @@ public class FarmerLocationActivity extends AppCompatActivity {
                 int strUnion= union.getUnionCode();
                 int strPaurasava= paurasava.getPaurasavaCode();
 
+              /*  String userType=strings[0].toString();
+                String userMobile=strings[1].toString();
+                String userName=strings[2].toString();
+                String userAddress=strings[3].toString();
+                String userPassword=strings[4].toString();
+                String userUpozila=strings[5].toString();
+                String userZila=strings[6].toString();
+                String userDivision=strings[7].toString();
+                String userPaurashova=  strings[8].toString();
+                String userUnion=  strings[9].toString();*/
 
+                String[] data={userType,userMobile,userName,userAddress,userPassword, strUpazila+""  ,
+                         strZila+"",strDivision+"",strPaurasava+"",strUnion+""};
+
+                SendData sendData=new SendData();
+                sendData.execute(data);
 
             }
         });
@@ -658,17 +676,38 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(String[]... strings) {
-            String userType=strings[0].toString();
-            String userMobile=strings[1].toString();
-            String userName=strings[2].toString();
-            String userAddress=strings[3].toString();
-            String userPassword=strings[4].toString();
-            String userUpozila=strings[5].toString();
-            String userZila=strings[6].toString();
-            String userDivision=strings[7].toString();
-            String userPaurashova=  strings[8].toString();
-            String userUnion=  strings[9].toString();
+            String s="fsd";
 
+            String userType=strings[0][0].toString();
+            String userMobile=strings[0][1].toString();
+            String userName=strings[0][2].toString();
+            String userAddress=strings[0][3].toString();
+            String userPassword=strings[0][4].toString();
+            String userUpozila=strings[0][5].toString();
+            String userZila=strings[0][6].toString();
+            String userDivision=strings[0][7].toString();
+            String userPaurashova=  strings[0][8].toString();
+            String userUnion=  strings[0][9].toString();
+
+            FarmerViewModel farmerViewModel=new FarmerViewModel();
+            User user =new User();
+            user.setMobileNo(userMobile);
+            user.setName(userName);
+            user.setUserType(1) ;
+            user.setPassword("123");
+
+            farmerViewModel.setUser(user);
+
+            UserAdditionalInfo  userAdditionalInfo=new UserAdditionalInfo();
+
+           userAdditionalInfo.setAddress(userAddress);
+           userAdditionalInfo.setMobile_no(userMobile);
+            userAdditionalInfo.setDivision_code(Integer.parseInt(userDivision));
+           userAdditionalInfo.setZila_code(Integer.parseInt(userZila) );
+            userAdditionalInfo.setPaurasava_code(Integer.parseInt(userPaurashova));
+            userAdditionalInfo.setUnion_code(Integer.parseInt(userUnion) );
+            userAdditionalInfo.setUpazila_code(Integer.parseInt(userUpozila) ) ;
+            farmerViewModel.setUserAdditionalInfo(userAdditionalInfo) ;
 
             JSONObject jObject;
             JSONArray jsonArray = null;
@@ -676,7 +715,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
             String str = "http://202.126.122.85:71/api/FarmerRegestration" ;//"http://202.126.122.85:71/api/Division";
             String response = "";
-
+String myResponse=null;
             URL url = null;
             try {
                 url = new URL(str);
@@ -689,16 +728,77 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
             JSONObject jsonObject;
             JSONStringer userJson = null;
-            OutputStreamWriter outputStreamWriter = null;
+            ObjectOutputStream objout=null;
             int responseCode;
             BufferedReader br;
             String line;
+
             try {
                 conn = (HttpURLConnection) url.openConnection();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            try {
+                conn.setDoOutput(true); //this is to enable writing
+                conn.setDoInput(true);  //this is to enable reading
+                conn.setRequestMethod("POST");
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            }
 
+            try {
+                objout = new ObjectOutputStream(conn.getOutputStream());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                 user=new User();
+                objout.writeObject(farmerViewModel);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            int responseCode1=0;
+            try {
+                responseCode1 = conn.getResponseCode();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            if (responseCode1 == HttpURLConnection.HTTP_OK) { //success
+                BufferedReader in = null;
+                try {
+                    in = new BufferedReader(new InputStreamReader(
+                            conn.getInputStream()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                String inputLine=null;
+                StringBuffer response5 = new StringBuffer();
+
+                while (true) {
+                    try {
+                        if (!((inputLine = in.readLine()) != null)) break;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    response5.append(inputLine);
+                }
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                // print result
+                System.out.println(response.toString());
+            }
+
+            try {
+                objout.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             return null;
         }
     }
