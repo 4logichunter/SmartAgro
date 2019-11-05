@@ -44,6 +44,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.696" />
 
+
+
     ]]>
 
     <TextView
@@ -54,8 +56,12 @@
         android:text="View"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark2"
-        tools:layout_editor_absoluteX="293dp"
-        tools:layout_editor_absoluteY="483dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.678" />
 
     <ImageButton
         android:id="@+id/imageButton9"
@@ -84,6 +90,10 @@
 
 
 
+
+
+
+
     ]]>
 
     <TextView
@@ -94,8 +104,12 @@
         android:text="Synchronize"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark2"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="486dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.682" />
 
     <TextView
         android:id="@+id/textView12"

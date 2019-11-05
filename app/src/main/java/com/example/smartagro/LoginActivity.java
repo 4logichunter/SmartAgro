@@ -13,6 +13,8 @@ import retrofit2.Callback;
 
 import android.widget.Toast;
 
+import com.google.gson.annotations.Expose;
+
 import java.io.IOException;
 
 
@@ -24,6 +26,8 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText editTextmobileNo, editTextpassword, editTextname, editTextuserType;
     String userType="1";
+    @Expose
+    String s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +61,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
-                    String s = response.body().string();
+                      s = response.body().string();
+
+
+
                     Toast.makeText(LoginActivity.this, s, Toast.LENGTH_LONG).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -68,8 +75,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
-        });
 
+        });
+        //int str=s.indexOf(0);
+        Intent intent = new Intent(this, FarmerActivity.class);
+        startActivity(intent);
 
     }
 
