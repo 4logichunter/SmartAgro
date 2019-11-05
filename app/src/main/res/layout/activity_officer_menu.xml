@@ -14,11 +14,11 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282"
-        app:srcCompat="@drawable/newsearch" />
+        app:layout_constraintVertical_bias="0.279"
+        app:srcCompat="@drawable/locationmap" />
 
     <TextView
         android:id="@+id/textView10"
@@ -43,7 +43,7 @@
         android:background="@drawable/roundcorner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499"
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
-        android:text="Farmer Result"
+        android:text="Field Result"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20dp"

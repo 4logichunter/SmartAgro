@@ -21,6 +21,7 @@ private  ImageButton btnLocation;
        // btnFarmer=findViewById(R.id.btnFarmer);
         findViewById(R.id.btnFarmer).setOnClickListener(this);
         findViewById(R.id.btnOfficer).setOnClickListener(this);
+        findViewById(R.id.btnAboutUs).setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +43,15 @@ private  ImageButton btnLocation;
 
 
                 startActivity(intent1);
+
+
+                break;
+            case R.id.btnAboutUs:
+
+                Intent  intent2= new Intent(this, AboutActivity.class);
+
+
+                startActivity(intent2);
 
 
                 break;

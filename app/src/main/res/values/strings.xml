@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">Smart Agro</string>
+    <string name="app_name" translatable="false">Green Tech : Smart Agro App</string>
     <string name="title_activity_maps">Location Map</string>
 </resources>

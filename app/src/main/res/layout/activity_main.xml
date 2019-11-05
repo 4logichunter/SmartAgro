@@ -82,7 +82,7 @@
         android:fontFamily="serif"
         android:text="About Us"
         android:textAlignment="center"
-        android:textColor="#FFFF"
+        android:textColor="#000"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,7 +161,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.323"
-        app:srcCompat="@drawable/settings" />
+        app:srcCompat="@drawable/setttingmy" />
 
     <ImageButton
         android:id="@+id/btnAboutUs"
@@ -181,7 +181,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
-        android:text="Product"
+        android:text="Products"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20dp"
