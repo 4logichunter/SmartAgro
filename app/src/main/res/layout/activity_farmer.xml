@@ -8,6 +8,36 @@
     tools:context=".FarmerActivity">
 
     <ImageButton
+        android:id="@+id/imageButtonHome"
+        android:layout_width="87dp"
+        android:layout_height="89dp"
+        android:background="@drawable/roundcorner"
+        android:padding="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.618"
+        app:srcCompat="@drawable/home" />
+
+    <TextView
+        android:id="@+id/textViewHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Home"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark2"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69" />
+
+    <ImageButton
         android:id="@+id/imageButtonResult"
         android:layout_width="87dp"
         android:layout_height="89dp"
@@ -74,10 +104,10 @@
         android:padding="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintHorizontal_bias="0.799"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23"
+        app:layout_constraintVertical_bias="0.247"
         app:srcCompat="@drawable/pushdata" />
 
     <TextView
@@ -91,20 +121,28 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintHorizontal_bias="0.824"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.352" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textViewPush2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Farmers"
         android:fontFamily="serif"
+        android:text="Push Data"
         android:textAlignment="center"
-        android:textColor="#FFFF"
+        android:textColor="@color/colorPrimaryDark2"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.824"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.352" /><![CDATA[
+
+    20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -112,4 +150,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.112" />
 
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ViewResultActivity"></activity>
+        <activity android:name=".FieldResultViewActivity"></activity>
+        <activity android:name=".OfficerMenuActivity" />
+        <activity android:name=".ViewResultActivity" />
         <activity android:name=".GetDataActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

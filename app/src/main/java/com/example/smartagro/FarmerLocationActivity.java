@@ -3,6 +3,10 @@ package com.example.smartagro;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Application;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -134,8 +138,27 @@ public class FarmerLocationActivity extends AppCompatActivity {
                 String[] data={userType,userMobile,userName,userAddress,userPassword, strUpazila+""  ,
                          strZila+"",strDivision+"",strPaurasava+"",strUnion+""};
 
-                SendData sendData=new SendData();
-                sendData.execute(data);
+                //SendData sendData=new SendData();
+                //sendData.execute(data);
+                AlertDialog.Builder dlgAlert = new AlertDialog.Builder(FarmerLocationActivity.this);
+                dlgAlert.setTitle((CharSequence) "Register Successful,Do you want to  log in?");
+
+                dlgAlert.setPositiveButton((CharSequence) "YES", new DialogInterface.OnClickListener() {
+                    @SuppressLint("WrongConstant")
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(FarmerLocationActivity.this, LoginActivity.class);
+                        startActivity(intent);
+
+
+
+                    }
+                });
+                dlgAlert.setNegativeButton((CharSequence) "NO", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                dlgAlert.setCancelable(false);
+                dlgAlert.show();
 
             }
         });

@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String EXTRA_MESSAGE = "0";
 private ImageButton btnFarmer;
 private  int userType;
+private  ImageButton btnLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ private  int userType;
         setContentView(R.layout.activity_main);
        // btnFarmer=findViewById(R.id.btnFarmer);
         findViewById(R.id.btnFarmer).setOnClickListener(this);
-
+        findViewById(R.id.btnOfficer).setOnClickListener(this);
     }
 
     @Override
@@ -34,9 +35,16 @@ private  int userType;
                 startActivity(intent);
 
 
+            break;
+            case R.id.btnOfficer:
+
+                Intent  intent1= new Intent(this, RegisterOfficerActivity.class);
+
+
+                startActivity(intent1);
+
+
                 break;
-          //  case R.id.textView9:
-          //      break;
         }
     }
 }

@@ -39,6 +39,7 @@ public class FarmerActivity extends AppCompatActivity   {
     private  ImageButton btnImage;
     private  ImageButton imagebtnSync;
     private  ImageButton imageButtonResult;
+    private  ImageButton imageButtonHome;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +49,15 @@ public class FarmerActivity extends AppCompatActivity   {
          btnImage=findViewById(R.id.imageButtonPushData );
          imageButtonResult=findViewById(R.id.imageButtonResult);
          imagebtnSync=findViewById(R.id.imagebtnSync);
+         imageButtonHome=findViewById(R.id.imageButtonHome);
+         imageButtonHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FarmerActivity.this, MainActivity.class);
+                startActivity(intent);
 
+            }
+        });
         imagebtnSync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +107,7 @@ public class FarmerActivity extends AppCompatActivity   {
           Call<ResponseBody> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .createSoilTestResult("01713332618","5","5","1","1","1","1","1",0);
+                .createSoilTestResult("01832738011","5","5","1","1","1","1","1",0);
 
             //    .createSoilTestResult("1","2",new Date("01/01/2019"),"0","1","018325","1","5","1","1",new Date("01/01/2019"));
 
