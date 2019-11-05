@@ -8,7 +8,7 @@
     tools:context=".FarmerActivity">
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/imageButtonResult"
         android:layout_width="87dp"
         android:layout_height="89dp"
         android:background="@drawable/roundcorner"
@@ -22,49 +22,7 @@
         app:srcCompat="@drawable/result" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="87dp"
-        android:layout_height="89dp"
-        android:background="@drawable/roundcorner"
-        android:padding="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614"
-        app:srcCompat="@drawable/report" /><![CDATA[
-
-    "
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
-
-
-
-    ]]>
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="View"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/imagebtnSync"
         android:layout_width="87dp"
         android:layout_height="89dp"
         android:background="@drawable/roundcorner"
@@ -75,29 +33,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.618"
-        app:srcCompat="@drawable/synchronize" /><![CDATA[
-
-    "
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.701" />
-
-
-
-
-
-
-
-
-
-    ]]>
+        app:srcCompat="@drawable/synchronize" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textViewSync"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
@@ -112,7 +51,7 @@
         app:layout_constraintVertical_bias="0.682" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/text_view_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
@@ -128,7 +67,7 @@
         app:layout_constraintVertical_bias="0.352" />
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/imageButtonPushData"
         android:layout_width="87dp"
         android:layout_height="89dp"
         android:background="@drawable/roundcorner"
@@ -142,7 +81,7 @@
         app:srcCompat="@drawable/pushdata" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textViewPush"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"

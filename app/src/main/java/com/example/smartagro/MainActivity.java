@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
     public static final String EXTRA_MESSAGE = "0";
 private ImageButton btnFarmer;
 private  int userType;

@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,32 +20,18 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class GetDataActivity extends AppCompatActivity {
-
+public class ViewResultActivity extends AppCompatActivity {
     private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_data);
+        setContentView(R.layout.activity_view_result);
         LoadResult _LoadResult=new  LoadResult();
         _LoadResult.execute();
         listView=findViewById(R.id.ListView);
-
-
-
     }
-
-
 
     public void showResult(ArrayList<SoilResult> _SoilResult)
     {
@@ -68,7 +53,7 @@ public class GetDataActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(ArrayList<SoilResult> soilResults) {
 
-           GetDataActivity.this.showResult(soilResults);
+            ViewResultActivity.this.showResult(soilResults);
         }
 
         @Override
@@ -77,7 +62,7 @@ public class GetDataActivity extends AppCompatActivity {
             JSONObject jObject;
             JSONArray jsonArray = null;
             int i = 0;
-            String str = "http://202.126.122.85:71/api/SoilTestResult" ;//"http://202.126.122.85:71/api/Division";
+            String str = "http://202.126.122.85:71/api/SoilTestResult2" ;//"http://202.126.122.85:71/api/Division";
             String response = "";
             ArrayList<SoilResult> SoilResultArrayList = new ArrayList();
             URL url = null;

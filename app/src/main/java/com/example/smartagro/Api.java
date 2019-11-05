@@ -1,6 +1,7 @@
 package com.example.smartagro;
 
 
+import java.util.Date;
 import java.util.List;
 
 import okhttp3.ResponseBody;
@@ -22,6 +23,27 @@ import retrofit2.http.POST;
                 @Field("name") String name,
                 @Field("userType") int userType
         );
+
+        @FormUrlEncoded
+        @POST("SoilTestResult")
+        Call<ResponseBody> createSoilTestResult(
+                @Field("mobile_no") String mobile_no,
+                @Field("ph") String ph,
+                @Field("carbon") String carbon,
+                @Field("magnesium") String magnesium,
+                @Field("calcium") String calcium,
+                @Field("sulphur") String sulphur,
+                @Field("phosphorus") String phosphorus,
+                @Field("nitrogen") String nitrogen,
+
+                @Field("is_viewed") int is_viewed
+
+
+
+
+
+        );
+
         /*@FormUrlEncoded
         @GET("Division")
         Call<List<Division>> getDivision();*/

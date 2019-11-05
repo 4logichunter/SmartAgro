@@ -16,6 +16,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,6 +35,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -676,9 +681,9 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(String[]... strings) {
-            String s="fsd";
 
-            String userType=strings[0][0].toString();
+
+           String userType=strings[0][0].toString();
             String userMobile=strings[0][1].toString();
             String userName=strings[0][2].toString();
             String userAddress=strings[0][3].toString();
@@ -691,6 +696,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
             FarmerViewModel farmerViewModel=new FarmerViewModel();
             User user =new User();
+            user.setId(5);
             user.setMobileNo(userMobile);
             user.setName(userName);
             user.setUserType(1) ;
@@ -709,13 +715,12 @@ public class FarmerLocationActivity extends AppCompatActivity {
             userAdditionalInfo.setUpazila_code(Integer.parseInt(userUpozila) ) ;
             farmerViewModel.setUserAdditionalInfo(userAdditionalInfo) ;
 
-            JSONObject jObject;
-            JSONArray jsonArray = null;
-            int i = 0;
 
-            String str = "http://202.126.122.85:71/api/FarmerRegestration" ;//"http://202.126.122.85:71/api/Division";
+
+
+            String str = "http://202.126.122.85:71/api/User" ;//"http://202.126.122.85:71/api/Division";
             String response = "";
-String myResponse=null;
+
             URL url = null;
             try {
                 url = new URL(str);
@@ -726,12 +731,10 @@ String myResponse=null;
             }
             HttpURLConnection conn = null;
 
-            JSONObject jsonObject;
-            JSONStringer userJson = null;
             ObjectOutputStream objout=null;
             int responseCode;
             BufferedReader br;
-            String line;
+
 
             try {
                 conn = (HttpURLConnection) url.openConnection();
@@ -742,6 +745,8 @@ String myResponse=null;
                 conn.setDoOutput(true); //this is to enable writing
                 conn.setDoInput(true);  //this is to enable reading
                 conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("Accept", "application/json");
             } catch (ProtocolException e) {
                 e.printStackTrace();
             }
@@ -752,8 +757,8 @@ String myResponse=null;
                 e.printStackTrace();
             }
             try {
-                 user=new User();
-                objout.writeObject(farmerViewModel);
+                // user=new User();
+                objout.writeObject(user);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -763,7 +768,6 @@ String myResponse=null;
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
 
             if (responseCode1 == HttpURLConnection.HTTP_OK) { //success
                 BufferedReader in = null;
@@ -791,8 +795,13 @@ String myResponse=null;
                 }
 
                 // print result
-                System.out.println(response.toString());
+                System.out.println(response5.toString());
             }
+            else
+            {
+
+            }
+
 
             try {
                 objout.close();
@@ -800,6 +809,88 @@ String myResponse=null;
                 e.printStackTrace();
             }
             return null;
+           /* URL obj = null;
+            try {
+                obj = new URL("http://202.126.122.85:71/api/User");
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            HttpURLConnection con = null;
+            try {
+                con = (HttpURLConnection) obj.openConnection();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                con.setRequestMethod("POST");
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            }
+            User user =new User();
+           // user.setId(5);
+            user.setMobileNo("01713332618");
+            user.setName("Morshed");
+            user.setUserType(1) ;
+            user.setPassword("123");
+
+            // For POST only - START
+            ObjectOutputStream objout=null;
+            con.setDoOutput(true);
+            try {
+                objout = new ObjectOutputStream(con.getOutputStream());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                // user=new User();
+                Gson gson=new Gson();
+
+
+                objout.writeObject( gson.toJson(user));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            // For POST only - END
+
+            int responseCode = 0;
+            try {
+                responseCode = con.getResponseCode();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println("POST Response Code :: " + responseCode);
+
+            if (responseCode == HttpURLConnection.HTTP_OK) { //success
+                BufferedReader in = null;
+                try {
+                    in = new BufferedReader(new InputStreamReader(
+                            con.getInputStream()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                String inputLine = null;
+                StringBuffer response = new StringBuffer();
+
+                while (true) {
+                    try {
+                        if (!((inputLine = in.readLine()) != null)) break;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    response.append(inputLine);
+                }
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                // print result
+                System.out.println(response.toString());
+            } else {
+                System.out.println("POST request not worked");
+            }*/
+
         }
     }
 
