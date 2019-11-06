@@ -7,23 +7,36 @@
     android:background="@drawable/myrect"
     tools:context=".RegisterOfficerActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="215dp"
+        android:layout_height="121dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113"
+        app:srcCompat="@drawable/logo" />
+
     <EditText
         android:id="@+id/editTextPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="serif"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:text="Passwordfsdafdsafdsaff"
-
+        android:text="123"
         android:textColor="#000"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525" />
+        app:layout_constraintVertical_bias="0.547" />
 
     <EditText
         android:id="@+id/editTextpassword"
@@ -31,9 +44,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="01713332618"
+        android:hint="Mobile No"
         android:fontFamily="serif"
-
+android:text="123"
         android:textColor="#000"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,19 +65,21 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#34eb9c"
+        android:background="@drawable/button_light_green"
         android:clickable="true"
+
         android:fontFamily="serif"
         android:text="Log In"
+        android:textColor="#FFF"
 
-        android:textColor="#eb4334"
+
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="0.674" />
 
     <TextView
         android:id="@+id/textView17"

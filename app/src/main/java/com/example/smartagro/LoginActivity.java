@@ -13,7 +13,11 @@ import retrofit2.Callback;
 
 import android.widget.Toast;
 
+import com.google.gson.JsonArray;
 import com.google.gson.annotations.Expose;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -61,12 +65,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
-                      s = response.body().string();
+                    s = response.body().string();
 
-
-
-                    Toast.makeText(LoginActivity.this, s, Toast.LENGTH_LONG).show();
-                } catch (IOException e) {
+                    if (s.contains("0"))  {
+                        Toast.makeText(LoginActivity.this, "User Name or Password Invalid", Toast.LENGTH_LONG).show();
+                    } else {
+                        Intent intent=new Intent(LoginActivity.this,FarmerActivity.class);
+                        startActivity((intent));
+                    }
+                }
+                catch (IOException e) {
                     e.printStackTrace();
                 }
             }
@@ -78,8 +86,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         });
         //int str=s.indexOf(0);
-        Intent intent = new Intent(this, FarmerActivity.class);
-        startActivity(intent);
+
 
     }
 

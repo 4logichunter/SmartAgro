@@ -29,6 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -106,7 +107,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
         spinnerUnion=findViewById(R.id.spinnerUnion);
         spinnerUpazila=findViewById(R.id.spinnerUpaZila);
 
-        btnGetDivisionList = findViewById(R.id.btnGetDivison);
+
         txtView=findViewById(R.id.textViewNext2);
         btnRegister=findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -137,7 +138,7 @@ public class FarmerLocationActivity extends AppCompatActivity {
 
                 String[] data={userType,userMobile,userName,userAddress,userPassword, strUpazila+""  ,
                          strZila+"",strDivision+"",strPaurasava+"",strUnion+""};
-
+                userSignUp(data);
                 //SendData sendData=new SendData();
                 //sendData.execute(data);
                 AlertDialog.Builder dlgAlert = new AlertDialog.Builder(FarmerLocationActivity.this);
@@ -691,7 +692,62 @@ public class FarmerLocationActivity extends AppCompatActivity {
     /*-----------------------------Show Upazila(End)----------------------*/
     ///////////////////////////////////////////////////////////////////////
 
+    private void userSignUp(String[] strings) {
+        String userType=strings[0].toString();
+        String userMobile=strings[1].toString();
+        String userName=strings[2].toString();
+        String userAddress=strings[3].toString();
+        String userPassword=strings[4].toString();
+        String userUpozila=strings[5].toString();
+        String userZila=strings[6].toString();
+        String userDivision=strings[7].toString();
+        String userPaurashova=  strings[8].toString();
+        String userUnion=  strings[9].toString();
 
+
+       /* User user =new User();
+
+        user.setMobileNo(userMobile);
+        user.setName(userName);
+        user.setUserType(1) ;
+        user.setPassword("123");
+        user.setDivision_code(Integer.parseInt(userDivision) );
+        user.setPaurasava_code(Integer.parseInt(userPaurashova)) ;
+        user.setUnion_code(Integer.parseInt(userUnion)) ;
+        user.setUpazila_code(Integer.parseInt(userUpozila));
+        user.setAddress(userAddress);
+        user.setZila_code(Integer.parseInt(userZila));*/
+
+
+        Call<ResponseBody> call = RetrofitClient
+                .getInstance()
+                .getApi()
+                .createRegisterUser(userMobile,userPassword,userName,0,userAddress,Integer.parseInt(userDivision),Integer.parseInt(userZila),Integer.parseInt(userUpozila),Integer.parseInt(userPaurashova),Integer.parseInt(userUnion));
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                   String s = response.body().string();
+
+
+
+                    Toast.makeText(FarmerLocationActivity.this, s, Toast.LENGTH_LONG).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(FarmerLocationActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+
+        });
+        //int str=s.indexOf(0);
+
+
+    }
 /*Data parsing method*/
 
     public class SendData extends AsyncTask<String[] ,Void ,Void>
@@ -717,26 +773,21 @@ public class FarmerLocationActivity extends AppCompatActivity {
             String userPaurashova=  strings[0][8].toString();
             String userUnion=  strings[0][9].toString();
 
-            FarmerViewModel farmerViewModel=new FarmerViewModel();
+
             User user =new User();
-            user.setId(5);
+
             user.setMobileNo(userMobile);
             user.setName(userName);
             user.setUserType(1) ;
             user.setPassword("123");
+            user.setDivision_code(Integer.parseInt(userDivision) );
+            user.setPaurasava_code(Integer.parseInt(userPaurashova)) ;
+            user.setUnion_code(Integer.parseInt(userUnion)) ;
+            user.setUpazila_code(Integer.parseInt(userUpozila));
+            user.setAddress(userAddress);
+            user.setZila_code(Integer.parseInt(userZila));
 
-            farmerViewModel.setUser(user);
 
-            UserAdditionalInfo  userAdditionalInfo=new UserAdditionalInfo();
-
-           userAdditionalInfo.setAddress(userAddress);
-           userAdditionalInfo.setMobile_no(userMobile);
-            userAdditionalInfo.setDivision_code(Integer.parseInt(userDivision));
-           userAdditionalInfo.setZila_code(Integer.parseInt(userZila) );
-            userAdditionalInfo.setPaurasava_code(Integer.parseInt(userPaurashova));
-            userAdditionalInfo.setUnion_code(Integer.parseInt(userUnion) );
-            userAdditionalInfo.setUpazila_code(Integer.parseInt(userUpozila) ) ;
-            farmerViewModel.setUserAdditionalInfo(userAdditionalInfo) ;
 
 
 

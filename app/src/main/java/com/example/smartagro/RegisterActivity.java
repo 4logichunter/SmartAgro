@@ -27,7 +27,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.textViewNext).setOnClickListener(this);
          txtName=findViewById(R.id.editTextName);
          txtMobile=findViewById(R.id.editTextMobile);
-         txtPassword=findViewById(R.id.editTextPassword);
+         txtPassword=findViewById(R.id.meditTextpassword);
          txtAddress=findViewById(R.id.editTextAddress);
     }
 
@@ -40,7 +40,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         String strname=txtName.getText().toString();
 
-                String[] myArray={"1",txtName.getText().toString(),"123",txtAddress.getText().toString(),txtMobile.getText().toString()};
+
+
+                String[] myArray={"1",txtName.getText().toString(),txtPassword.getText().toString(),txtAddress.getText().toString(),txtMobile.getText().toString()};
 
                 Intent intent = new Intent(this, FarmerLocationActivity.class);
                 intent.putExtra("EXTRA_MESSAGE", myArray);

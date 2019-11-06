@@ -5,127 +5,219 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FarmerLocationActivity">
-    <Button
-        android:id="@+id/btnGetDivison"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="72dp" />
-
- <TextView
-        android:id="@+id/textViewNext2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="GEO Location"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161" />
-
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="216dp"
-        android:layout_height="46dp"
-        android:layout_margin="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="#2196F3"
-        android:clickable="true"
-        android:fontFamily="serif"
-        android:text="Register"
-
-        android:textColor="#FFFF"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673" />
-
-    <TextView
-        android:id="@+id/textViewLoginPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="Have Account?Login"
-
-        android:textColor="#000"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.737"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.723" />
-
-    <Spinner
-        android:id="@+id/spinnerDivison"
-        android:layout_width="191dp"
-        android:layout_height="28dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264" />
-
-    <Spinner
-        android:id="@+id/spinnerUpaZila"
-        android:layout_width="191dp"
-        android:layout_height="28dp"
 
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.336" />
+   <TextView
+       android:id="@+id/textViewNext2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:fontFamily="serif"
+       android:text="GEO Location"
+       android:textAlignment="center"
+       android:textColor="#000000"
+       android:textSize="20dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.407"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.157" />
 
-    <Spinner
-        android:id="@+id/spinnerpaurasava"
-        android:layout_width="191dp"
-        android:layout_height="28dp"
+   <Spinner
+       android:id="@+id/spinnerDivison"
+       android:layout_width="191dp"
+       android:layout_height="28dp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.75"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.263" />
 
-    <Spinner
-        android:id="@+id/spinnerZila"
-        android:layout_width="191dp"
-        android:layout_height="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+   <Spinner
+       android:id="@+id/spinnerZila"
+       android:layout_width="191dp"
+       android:layout_height="28dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.759"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.334" />
 
-    <Spinner
-        android:id="@+id/spinnerUnion"
-        android:layout_width="191dp"
-        android:layout_height="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404" />
+   <TextView
+       android:id="@+id/textViewNext8"
+       android:layout_width="67dp"
+       android:layout_height="26dp"
+       android:fontFamily="serif"
+       android:text="Zila"
+       android:textAlignment="center"
+       android:textColor="#000000"
+       android:textSize="20dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.215"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.333" />
+
+   <TextView
+       android:id="@+id/textViewNext7"
+       android:layout_width="67dp"
+       android:layout_height="26dp"
+       android:fontFamily="serif"
+       android:text="Zila"
+       android:textAlignment="center"
+       android:textColor="#000000"
+       android:textSize="20dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.215"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.333" />
 
 
 
+   <Button
+       android:id="@+id/btnRegister"
+       android:layout_width="216dp"
+       android:layout_height="46dp"
+       android:layout_margin="10dp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginTop="10dp"
+       android:layout_marginRight="10dp"
+       android:layout_marginBottom="10dp"
+       android:background="@drawable/button_light_green"
+       android:clickable="true"
+       android:fontFamily="serif"
+       android:text="Register"
+
+       android:textColor="#FFFF"
+       android:textSize="20dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.523"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.673" />
+
+   <TextView
+       android:id="@+id/textViewLoginPage"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:fontFamily="serif"
+       android:text="Have Account?Login"
+
+       android:textColor="#000"
+       android:textSize="12dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.927"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.721" />
+
+   <TextView
+       android:id="@+id/textViewNext3"
+       android:layout_width="103dp"
+       android:layout_height="27dp"
+       android:fontFamily="serif"
+       android:text="Division"
+       android:textAlignment="center"
+       android:textColor="#000000"
+       android:textSize="20dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.103"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.265" />
+
+   <TextView
+       android:id="@+id/textViewNext4"
+       android:layout_width="95dp"
+       android:layout_height="30dp"
+       android:fontFamily="serif"
+       android:text="UpaZila"
+       android:textAlignment="center"
+       android:textColor="#000000"
+       android:textSize="20dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.145"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.389" />
+
+   <TextView
+       android:id="@+id/textViewNext6"
+       android:layout_width="111dp"
+       android:layout_height="29dp"
+       android:fontFamily="serif"
+       android:text="Paurasava"
+       android:textAlignment="center"
+       android:textColor="#000000"
+       android:textSize="20dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.12"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.518" />
+
+   <Spinner
+       android:id="@+id/spinnerpaurasava"
+       android:layout_width="191dp"
+       android:layout_height="28dp"
+
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.781"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.52" />
+
+   <TextView
+       android:id="@+id/textViewNext5"
+       android:layout_width="67dp"
+       android:layout_height="26dp"
+       android:fontFamily="serif"
+       android:text="Union"
+       android:textAlignment="center"
+       android:textColor="#000000"
+       android:textSize="20dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.215"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.456" />
+
+   <Spinner
+       android:id="@+id/spinnerUpaZila"
+       android:layout_width="191dp"
+       android:layout_height="28dp"
+
+
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.781"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.391" />
+
+   <Spinner
+       android:id="@+id/spinnerUnion"
+       android:layout_width="191dp"
+       android:layout_height="28dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.781"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.458" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

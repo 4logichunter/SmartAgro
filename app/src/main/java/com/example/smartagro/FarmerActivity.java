@@ -2,6 +2,7 @@ package com.example.smartagro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -61,8 +62,14 @@ public class FarmerActivity extends AppCompatActivity   {
         imagebtnSync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*ProgressDialog dialog = ProgressDialog.show(FarmerActivity.this, "Sync",
+                        "Synchronizing Data. Please wait...", true);
+                dialog.show();*/
+
                 Intent intent = new Intent(FarmerActivity.this, GetDataActivity.class);
                 startActivity(intent);
+
+
             }
         });
 

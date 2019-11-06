@@ -25,6 +25,22 @@ import retrofit2.http.POST;
         );
 
         @FormUrlEncoded
+        @POST("RegisterUser")
+        Call<ResponseBody> createRegisterUser(
+                @Field("mobileNo") String mobileNo,
+                @Field("password") String password,
+                @Field("name") String name,
+                @Field("userType") int userType,
+
+                @Field("address") String address,
+                @Field("division_code") int division_code,
+                @Field("zila_code") int zila_code,
+                @Field("upazila_code") int upazila_code,
+                @Field("paurasava_code") int paurasava_code,
+                @Field("union_code") int union_code
+
+        );
+        @FormUrlEncoded
         @POST("SoilTestResult")
         Call<ResponseBody> createSoilTestResult(
                 @Field("mobile_no") String mobile_no,
@@ -35,7 +51,6 @@ import retrofit2.http.POST;
                 @Field("sulphur") String sulphur,
                 @Field("phosphorus") String phosphorus,
                 @Field("nitrogen") String nitrogen,
-
                 @Field("is_viewed") int is_viewed
 
 
