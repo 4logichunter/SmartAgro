@@ -3,6 +3,7 @@ package com.example.smartagro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -22,6 +23,7 @@ private  ImageButton btnLocation;
         findViewById(R.id.btnFarmer).setOnClickListener(this);
         findViewById(R.id.btnOfficer).setOnClickListener(this);
         findViewById(R.id.btnAboutUs).setOnClickListener(this);
+        findViewById(R.id.btnLocation).setOnClickListener(this);
     }
 
     @Override
@@ -54,7 +56,19 @@ private  ImageButton btnLocation;
                 startActivity(intent2);
 
 
+                break; case R.id.btnLocation:
+
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=Barisal Barguna Amtali");
+
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(mapIntent);
+                }
+
+
                 break;
+
         }
     }
 }
